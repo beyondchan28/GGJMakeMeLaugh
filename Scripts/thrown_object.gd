@@ -10,7 +10,8 @@ onready var screen_size = get_viewport_rect().size
 var damage: int = 0
 
 func _ready():
-	pass
+	$CollisionDetection.connect("area_entered", self, "colliding")
+	$VisibilityNotifier2D.connect("screen_exited", self, "exit_screen")
 	
 
 func _physics_process(delta):
@@ -45,3 +46,14 @@ func launch(target_position):
 #	print("height %s" % arc_height)
 	
 	vel = calc_arc_vel(global_position, target_position, arc_height, GRAVITY)
+
+#hitting enemy only because the collision mask and layer matching
+func colliding(area):
+	print("damage : ", damage)
+	print("collided with : ", area.name)
+	area.pissed_off(damage)
+	queue_free()
+
+func exit_screen():
+#	print("ExitScreen")
+	queue_free()

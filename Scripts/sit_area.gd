@@ -11,6 +11,7 @@ func _physics_process(delta):
 				body.play_anim("sit_down")
 				yield(body.anim, "animation_finished")
 				set_slider_enabled(body)
+				self.set_physics_process(false)
 
 func set_slider_enabled(body):
 	body.get_node("Throw/HSlider").set_visible(true)

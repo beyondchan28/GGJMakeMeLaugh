@@ -11,7 +11,7 @@ func _physics_process(delta):
 	for area in coll_areas:
 		if area.is_in_group("pickup_obj"):
 			if !player.is_has_throw_obj and Input.is_action_just_pressed("interact"):
-				print("happen")
+#				print("happen")
 				player.set_throw_obj(area.texture, area.anger_damage)
 				player.get_node("Throw/HSlider").set_calc_diff(area.diff_percentage)
 				area.queue_free()

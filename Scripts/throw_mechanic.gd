@@ -54,9 +54,9 @@ func calc_throw_point(percent: float):
 	var val_percentage = self.max_value * (percent / 100.0)
 	bot_bar = self.min_value + val_percentage/2.0
 	top_bar = self.max_value - val_percentage/2.0
-	print("percentage : ", val_percentage)
-	print("bot_bar : ", bot_bar)
-	print("top_bar : ", top_bar)
+#	print("percentage : ", val_percentage)
+#	print("bot_bar : ", bot_bar)
+#	print("top_bar : ", top_bar)
 
 
 func reset_margin():
@@ -74,5 +74,7 @@ func _input(event):
 	if event.is_action_pressed("throw"):
 #		is_stop = true
 		if is_on_point:
-			player.throw()
-			self_disabled()
+			player.on_point_throw()
+		else:
+			player.miss_throw()
+		self_disabled()

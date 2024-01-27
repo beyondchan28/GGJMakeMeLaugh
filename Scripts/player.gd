@@ -67,14 +67,27 @@ func set_throw_obj(texture: Texture, anger_damage: int ):
 	obj_to_throw.damage = anger_damage
 	obj_to_throw.get_node("Sprite").set_texture(texture)
 
-func throw():
+func throw(target_pos):
+	play_anim("throw")
+	yield(anim, "animation_finished")
+	self.get_parent().add_child(obj_to_throw)
+	obj_to_throw.position = $ThrowPos.global_position
+	obj_to_throw.launch(target_pos)
+	is_has_throw_obj = false
+	self.set_physics_process(true)
+	self.get_parent().get_node("Classroom/SitArea").set_physics_process(true)
+
+func on_point_throw():
 	if obj_to_throw != null:
-		self.get_parent().add_child(obj_to_throw)
-		obj_to_throw.position = self.position
 		if enemy:
-			obj_to_throw.launch(enemy.position)
-			is_has_throw_obj = false
-			self.set_physics_process(true)
+			throw(enemy.position)
 	else:
 		print("object_to_throw is null")
 
+func miss_throw():
+	if obj_to_throw != null:
+		var miss_poses = enemy.get_node("MissPos").get_children()
+		var rand_pos = miss_poses[randi() % miss_poses.size()].global_position
+		throw(rand_pos)
+	else:
+		print("object_to_throw is null")

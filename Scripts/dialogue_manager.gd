@@ -25,6 +25,10 @@ func _next_slide():
 		else:
 			GameEvents.emit_signal("dialog_finished")
 
+func _unhandled_key_input(event):
+	if event.is_action_pressed("next_dialogue"):
+		_next_slide()
+
 func show_slide():
 	_dialog_text.text = _current_dialogue.dialog_slides[_current_slides_index]
 

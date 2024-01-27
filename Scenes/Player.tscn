@@ -1,9 +1,10 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=53 format=2]
 
 [ext_resource path="res://Scripts/player.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/throw_mechanic.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Player/all.png" type="Texture" id=3]
 [ext_resource path="res://Scripts/throw_object_detector.gd" type="Script" id=4]
+[ext_resource path="res://Assets/Player/semua aset karakter utama.png" type="Texture" id=5]
 [ext_resource path="res://Scripts/timer.gd" type="Script" id=6]
 [ext_resource path="res://RuntimeData/runtime_data.tres" type="Resource" id=7]
 
@@ -65,25 +66,115 @@ region = Rect2( 4000, 0, 160, 220 )
 atlas = ExtResource( 3 )
 region = Rect2( 4160, 0, 160, 220 )
 
-[sub_resource type="AtlasTexture" id=47]
-atlas = ExtResource( 3 )
-region = Rect2( 1920, 0, 160, 220 )
+[sub_resource type="AtlasTexture" id=75]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 0, 660, 159, 220 )
 
-[sub_resource type="AtlasTexture" id=48]
-atlas = ExtResource( 3 )
-region = Rect2( 2080, 0, 160, 220 )
+[sub_resource type="AtlasTexture" id=76]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 159, 660, 159, 220 )
 
-[sub_resource type="AtlasTexture" id=49]
-atlas = ExtResource( 3 )
-region = Rect2( 2240, 0, 160, 220 )
+[sub_resource type="AtlasTexture" id=77]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 318, 660, 159, 220 )
 
-[sub_resource type="AtlasTexture" id=50]
-atlas = ExtResource( 3 )
-region = Rect2( 2400, 0, 160, 220 )
+[sub_resource type="AtlasTexture" id=78]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 477, 660, 159, 220 )
 
-[sub_resource type="AtlasTexture" id=51]
-atlas = ExtResource( 3 )
-region = Rect2( 2560, 0, 160, 220 )
+[sub_resource type="AtlasTexture" id=79]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 636, 660, 159, 220 )
+
+[sub_resource type="AtlasTexture" id=80]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 795, 660, 159, 220 )
+
+[sub_resource type="AtlasTexture" id=81]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 954, 660, 159, 220 )
+
+[sub_resource type="AtlasTexture" id=82]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 1113, 660, 159, 220 )
+
+[sub_resource type="AtlasTexture" id=83]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 1272, 660, 159, 220 )
+
+[sub_resource type="AtlasTexture" id=84]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 1431, 660, 159, 220 )
+
+[sub_resource type="AtlasTexture" id=63]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 0, 440, 159, 220 )
+
+[sub_resource type="AtlasTexture" id=64]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 159, 440, 159, 220 )
+
+[sub_resource type="AtlasTexture" id=65]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 318, 440, 159, 220 )
+
+[sub_resource type="AtlasTexture" id=66]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 477, 440, 159, 220 )
+
+[sub_resource type="AtlasTexture" id=67]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 636, 440, 159, 220 )
+
+[sub_resource type="AtlasTexture" id=68]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 795, 440, 159, 220 )
+
+[sub_resource type="AtlasTexture" id=69]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 954, 440, 159, 220 )
+
+[sub_resource type="AtlasTexture" id=70]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 1113, 440, 159, 220 )
+
+[sub_resource type="AtlasTexture" id=71]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 1272, 440, 159, 220 )
+
+[sub_resource type="AtlasTexture" id=72]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 1431, 440, 159, 220 )
+
+[sub_resource type="AtlasTexture" id=73]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 1590, 440, 159, 220 )
+
+[sub_resource type="AtlasTexture" id=74]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 1749, 440, 159, 220 )
 
 [sub_resource type="AtlasTexture" id=39]
 atlas = ExtResource( 3 )
@@ -126,9 +217,14 @@ animations = [ {
 "name": "jump",
 "speed": 10.0
 }, {
-"frames": [ SubResource( 47 ), SubResource( 48 ), SubResource( 49 ), SubResource( 50 ), SubResource( 51 ) ],
+"frames": [ SubResource( 75 ), SubResource( 76 ), SubResource( 77 ), SubResource( 78 ), SubResource( 79 ), SubResource( 80 ), SubResource( 81 ), SubResource( 82 ), SubResource( 83 ), SubResource( 84 ) ],
 "loop": false,
 "name": "sit_down",
+"speed": 10.0
+}, {
+"frames": [ SubResource( 63 ), SubResource( 64 ), SubResource( 65 ), SubResource( 66 ), SubResource( 67 ), SubResource( 68 ), SubResource( 69 ), SubResource( 70 ), SubResource( 71 ), SubResource( 72 ), SubResource( 73 ), SubResource( 74 ) ],
+"loop": false,
+"name": "throw",
 "speed": 10.0
 }, {
 "frames": [ SubResource( 39 ), SubResource( 40 ), SubResource( 41 ), SubResource( 42 ), SubResource( 43 ), SubResource( 44 ) ],
@@ -199,8 +295,8 @@ editor_draw_drag_margin = true
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 0, -106 )
 frames = SubResource( 10 )
-animation = "idle"
-frame = 3
+animation = "throw"
+frame = 11
 playing = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -235,3 +331,6 @@ script = ExtResource( 4 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ThrowObjectDetector"]
 position = Vector2( 0, -75 )
 shape = SubResource( 52 )
+
+[node name="ThrowPos" type="Position2D" parent="."]
+position = Vector2( -32, -131 )
