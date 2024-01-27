@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Assets/Environment/pixelated_classroomprops.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/door.gd" type="Script" id=2]
 [ext_resource path="res://Dialogues/player.tres" type="Resource" id=3]
+[ext_resource path="res://Scripts/sit_area.gd" type="Script" id=4]
 [ext_resource path="res://Scripts/dialogue_trigger.gd" type="Script" id=5]
-[ext_resource path="res://icon.png" type="Texture" id=6]
+[ext_resource path="res://Scenes/Pickup.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/Environment/pixelated_background.png" type="Texture" id=7]
 
 [sub_resource type="AtlasTexture" id=1]
@@ -21,10 +22,17 @@ extents = Vector2( 1000, 10 )
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 10, 300 )
 
+[sub_resource type="CapsuleShape2D" id=7]
+radius = 18.0
+height = 100.0
+
 [sub_resource type="RectangleShape2D" id=4]
 
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 50, 150 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 20, 20 )
 
 [node name="Classroom" type="Node2D"]
 
@@ -57,12 +65,16 @@ shape = SubResource( 5 )
 position = Vector2( 675, -244 )
 shape = SubResource( 5 )
 
-[node name="Enemy" type="Sprite" parent="."]
-position = Vector2( 120, 366 )
-texture = ExtResource( 6 )
+[node name="Enemy" type="Area2D" parent="."]
+position = Vector2( 138, 417 )
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy"]
+shape = SubResource( 7 )
 
 [node name="Area2D" type="Area2D" parent="."]
-position = Vector2( 184, -168 )
+position = Vector2( 896, -143 )
 collision_layer = 2
 collision_mask = 2
 script = ExtResource( 5 )
@@ -85,3 +97,18 @@ shape = SubResource( 6 )
 
 [node name="DoorPos" type="Position2D" parent="Doors/Door"]
 position = Vector2( -6, 153 )
+
+[node name="SitArea" type="Area2D" parent="."]
+position = Vector2( 442, 468 )
+collision_layer = 2
+collision_mask = 2
+script = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SitArea"]
+shape = SubResource( 8 )
+
+[node name="Pickup" parent="." instance=ExtResource( 6 )]
+position = Vector2( 903, 442 )
+
+[node name="Pickup2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 651, 432 )

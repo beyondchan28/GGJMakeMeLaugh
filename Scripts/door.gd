@@ -14,7 +14,7 @@ func _physics_process(delta):
 	for body in coll_bodies:
 		if body.name == "Player":
 			if Input.is_action_just_pressed("interact"):
-				print("INTERACT WITH DOOR")
+#				print("INTERACT WITH DOOR")
 				detect_doors()
 
 func detect_doors():

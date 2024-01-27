@@ -10,12 +10,15 @@ const JUMP_HEIGHT = -400
 
 var motion = Vector2.ZERO
 
-enum STATES {MOVE, JUMP}
+enum STATES {MOVE, JUMP, SIT}
 var curr_state = STATES.MOVE
+var is_has_throw_obj := false
 
 onready var thrown_obj = preload("res://Scenes/ThrownObject.tscn")
 onready var enemy = self.get_parent().get_node("Classroom/Enemy")
 onready var anim = $AnimatedSprite
+
+var obj_to_throw
 
 export(Resource) var runtime_data = runtime_data as RuntimeData
 
@@ -58,10 +61,20 @@ func play_anim(anim_name):
 		return
 	anim.play(anim_name)
 
+func set_throw_obj(texture: Texture, anger_damage: int ):
+	is_has_throw_obj = true
+	obj_to_throw = thrown_obj.instance()
+	obj_to_throw.damage = anger_damage
+	obj_to_throw.get_node("Sprite").set_texture(texture)
+
 func throw():
-	var obj = thrown_obj.instance()
-	self.get_parent().add_child(obj)
-	obj.position = self.position
-	if enemy:
-		obj.launch(enemy.position)
+	if obj_to_throw != null:
+		self.get_parent().add_child(obj_to_throw)
+		obj_to_throw.position = self.position
+		if enemy:
+			obj_to_throw.launch(enemy.position)
+			is_has_throw_obj = false
+			self.set_physics_process(true)
+	else:
+		print("object_to_throw is null")
 

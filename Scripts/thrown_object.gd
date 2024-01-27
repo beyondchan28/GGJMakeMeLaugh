@@ -7,6 +7,7 @@ var original_rotation = 0.0
 
 onready var screen_size = get_viewport_rect().size
 
+var damage: int = 0
 
 func _ready():
 	pass

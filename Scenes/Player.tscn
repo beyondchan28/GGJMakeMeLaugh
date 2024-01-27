@@ -1,8 +1,9 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://Scripts/player.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/throw_mechanic.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Player/all.png" type="Texture" id=3]
+[ext_resource path="res://Scripts/throw_object_detector.gd" type="Script" id=4]
 [ext_resource path="res://Scripts/timer.gd" type="Script" id=6]
 [ext_resource path="res://RuntimeData/runtime_data.tres" type="Resource" id=7]
 
@@ -136,6 +137,9 @@ animations = [ {
 "speed": 10.0
 } ]
 
+[sub_resource type="RectangleShape2D" id=52]
+extents = Vector2( 70, 70 )
+
 [node name="Player" type="KinematicBody2D"]
 collision_layer = 2
 collision_mask = 3
@@ -193,9 +197,10 @@ drag_margin_bottom = 1.0
 editor_draw_drag_margin = true
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( -6, -106 )
+position = Vector2( 0, -106 )
 frames = SubResource( 10 )
 animation = "idle"
+frame = 3
 playing = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -221,3 +226,12 @@ show_behind_parent = true
 margin_right = 40.0
 margin_bottom = 14.0
 color = Color( 0, 0, 0, 1 )
+
+[node name="ThrowObjectDetector" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 8
+script = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ThrowObjectDetector"]
+position = Vector2( 0, -75 )
+shape = SubResource( 52 )

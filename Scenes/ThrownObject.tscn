@@ -4,7 +4,7 @@
 [ext_resource path="res://icon.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 50, 10 )
+extents = Vector2( 20, 20 )
 
 [node name="ThrownObject" type="KinematicBody2D"]
 collision_layer = 8
@@ -16,5 +16,4 @@ shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0.499999, 0.499999 )
-scale = Vector2( 1.51563, 0.296875 )
 texture = ExtResource( 2 )
