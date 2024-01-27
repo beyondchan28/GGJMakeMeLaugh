@@ -7,6 +7,9 @@ var original_rotation = 0.0
 
 onready var screen_size = get_viewport_rect().size
 
+var dialogue_when_hit: Resource 
+var dialogue_when_miss : Resource = preload("res://Dialogues/miss.tres")
+
 var damage: int = 0
 
 func _ready():
@@ -52,8 +55,11 @@ func colliding(area):
 	print("damage : ", damage)
 	print("collided with : ", area.name)
 	area.pissed_off(damage)
+	GameEvents.emit_signal("dialog_initiated", dialogue_when_hit)
+	$VisibilityNotifier2D.disconnect("screen_exited", self, "exit_screen")
 	queue_free()
 
 func exit_screen():
 #	print("ExitScreen")
+	GameEvents.emit_signal("dialog_initiated", dialogue_when_miss)
 	queue_free()
