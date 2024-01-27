@@ -61,10 +61,11 @@ func play_anim(anim_name):
 		return
 	anim.play(anim_name)
 
-func set_throw_obj(texture: Texture, anger_damage: int, dialogue_if_hit_enemy: Resource ):
+func set_throw_obj(texture: Texture, anger_damage: int, dialogue_if_hit_enemy: Resource, vfx_name: String):
 	is_has_throw_obj = true
 	obj_to_throw = thrown_obj.instance()
 	obj_to_throw.damage = anger_damage
+	obj_to_throw.vfx_name = vfx_name
 	obj_to_throw.dialogue_when_hit = dialogue_if_hit_enemy
 	obj_to_throw.get_node("Sprite").set_texture(texture)
 

@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Assets/Pixel Health Pack/healthbar4.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/enemy.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Throw Visual Effect/absurdity_pocong.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Throw Visual Effect/absurdity_durian.png" type="Texture" id=4]
 
 [sub_resource type="CapsuleShape2D" id=7]
 radius = 18.0
@@ -14,6 +16,108 @@ region = Rect2( 140.111, 48.1484, 104.593, 20.1481 )
 [sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 1 )
 region = Rect2( 12.25, 48.25, 105, 21 )
+
+[sub_resource type="Animation" id=10]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("VFX/DurianRuntuh/Durian:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -17, -351 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("VFX/DurianRuntuh/Durian2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 57, -383 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("VFX/DurianRuntuh/Durian3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 61, -296 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("VFX/DurianRuntuh:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=11]
+resource_name = "durian_runtuh"
+tracks/0/type = "value"
+tracks/0/path = NodePath("VFX/DurianRuntuh/Durian:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -17, -351 ), Vector2( -45, 231 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("VFX/DurianRuntuh/Durian2:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 57, -383 ), Vector2( 47, 254 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("VFX/DurianRuntuh/Durian3:position")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 61, -296 ), Vector2( 35, 226 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("VFX/DurianRuntuh:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
 
 [node name="Enemy" type="Area2D"]
 position = Vector2( 138, 417 )
@@ -56,3 +160,28 @@ margin_right = 51.0
 margin_bottom = -81.0
 texture_under = SubResource( 8 )
 texture_progress = SubResource( 9 )
+
+[node name="VFX" type="Node2D" parent="."]
+
+[node name="Pocong" type="Sprite" parent="VFX"]
+position = Vector2( -128, -102 )
+texture = ExtResource( 3 )
+
+[node name="DurianRuntuh" type="Node2D" parent="VFX"]
+position = Vector2( 18, -339 )
+
+[node name="Durian" type="Sprite" parent="VFX/DurianRuntuh"]
+position = Vector2( -17, -351 )
+texture = ExtResource( 4 )
+
+[node name="Durian2" type="Sprite" parent="VFX/DurianRuntuh"]
+position = Vector2( 57, -383 )
+texture = ExtResource( 4 )
+
+[node name="Durian3" type="Sprite" parent="VFX/DurianRuntuh"]
+position = Vector2( 61, -296 )
+texture = ExtResource( 4 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 10 )
+anims/durian_runtuh = SubResource( 11 )

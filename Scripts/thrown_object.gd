@@ -11,6 +11,7 @@ var dialogue_when_hit: Resource
 var dialogue_when_miss : Resource = preload("res://Dialogues/miss.tres")
 
 var damage: int = 0
+var vfx_name: String = ""
 
 func _ready():
 	$CollisionDetection.connect("area_entered", self, "colliding")
@@ -57,9 +58,15 @@ func colliding(area):
 	area.pissed_off(damage)
 	GameEvents.emit_signal("dialog_initiated", dialogue_when_hit)
 	$VisibilityNotifier2D.disconnect("screen_exited", self, "exit_screen")
+	play_vfx(area, vfx_name)
 	queue_free()
 
 func exit_screen():
 #	print("ExitScreen")
 	GameEvents.emit_signal("dialog_initiated", dialogue_when_miss)
 	queue_free()
+
+func play_vfx(enemy, anim_name: String = ""):
+	if anim_name != "":
+		enemy.get_node("AnimationPlayer").play(anim_name)
+		yield(enemy.get_node("AnimationPlayer"), "animation_finished")
