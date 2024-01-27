@@ -1,0 +1,223 @@
+[gd_scene load_steps=33 format=2]
+
+[ext_resource path="res://Scripts/player.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/throw_mechanic.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Player/all.png" type="Texture" id=3]
+[ext_resource path="res://Scripts/timer.gd" type="Script" id=6]
+[ext_resource path="res://RuntimeData/runtime_data.tres" type="Resource" id=7]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 18.0
+height = 100.0
+
+[sub_resource type="StyleBoxTexture" id=3]
+
+[sub_resource type="AtlasTexture" id=45]
+atlas = ExtResource( 3 )
+region = Rect2( 3360, 0, 160, 220 )
+
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 3 )
+region = Rect2( 4320, 0, 160, 220 )
+
+[sub_resource type="AtlasTexture" id=22]
+atlas = ExtResource( 3 )
+region = Rect2( 4480, 0, 160, 220 )
+
+[sub_resource type="AtlasTexture" id=23]
+atlas = ExtResource( 3 )
+region = Rect2( 4640, 0, 160, 220 )
+
+[sub_resource type="AtlasTexture" id=24]
+atlas = ExtResource( 3 )
+region = Rect2( 4800, 0, 160, 220 )
+
+[sub_resource type="AtlasTexture" id=25]
+atlas = ExtResource( 3 )
+region = Rect2( 3040, 0, 160, 220 )
+
+[sub_resource type="AtlasTexture" id=26]
+atlas = ExtResource( 3 )
+region = Rect2( 3200, 0, 160, 220 )
+
+[sub_resource type="AtlasTexture" id=27]
+atlas = ExtResource( 3 )
+region = Rect2( 3360, 0, 160, 220 )
+
+[sub_resource type="AtlasTexture" id=28]
+atlas = ExtResource( 3 )
+region = Rect2( 3520, 0, 160, 220 )
+
+[sub_resource type="AtlasTexture" id=29]
+atlas = ExtResource( 3 )
+region = Rect2( 3680, 0, 160, 220 )
+
+[sub_resource type="AtlasTexture" id=30]
+atlas = ExtResource( 3 )
+region = Rect2( 3840, 0, 160, 220 )
+
+[sub_resource type="AtlasTexture" id=31]
+atlas = ExtResource( 3 )
+region = Rect2( 4000, 0, 160, 220 )
+
+[sub_resource type="AtlasTexture" id=32]
+atlas = ExtResource( 3 )
+region = Rect2( 4160, 0, 160, 220 )
+
+[sub_resource type="AtlasTexture" id=47]
+atlas = ExtResource( 3 )
+region = Rect2( 1920, 0, 160, 220 )
+
+[sub_resource type="AtlasTexture" id=48]
+atlas = ExtResource( 3 )
+region = Rect2( 2080, 0, 160, 220 )
+
+[sub_resource type="AtlasTexture" id=49]
+atlas = ExtResource( 3 )
+region = Rect2( 2240, 0, 160, 220 )
+
+[sub_resource type="AtlasTexture" id=50]
+atlas = ExtResource( 3 )
+region = Rect2( 2400, 0, 160, 220 )
+
+[sub_resource type="AtlasTexture" id=51]
+atlas = ExtResource( 3 )
+region = Rect2( 2560, 0, 160, 220 )
+
+[sub_resource type="AtlasTexture" id=39]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 160, 220 )
+
+[sub_resource type="AtlasTexture" id=40]
+atlas = ExtResource( 3 )
+region = Rect2( 160, 0, 160, 220 )
+
+[sub_resource type="AtlasTexture" id=41]
+atlas = ExtResource( 3 )
+region = Rect2( 320, 0, 160, 220 )
+
+[sub_resource type="AtlasTexture" id=42]
+atlas = ExtResource( 3 )
+region = Rect2( 480, 0, 160, 220 )
+
+[sub_resource type="AtlasTexture" id=43]
+atlas = ExtResource( 3 )
+region = Rect2( 640, 0, 160, 220 )
+
+[sub_resource type="AtlasTexture" id=44]
+atlas = ExtResource( 3 )
+region = Rect2( 800, 0, 160, 220 )
+
+[sub_resource type="SpriteFrames" id=10]
+animations = [ {
+"frames": [ SubResource( 45 ) ],
+"loop": false,
+"name": "fall",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ) ],
+"loop": false,
+"name": "jump",
+"speed": 10.0
+}, {
+"frames": [ SubResource( 47 ), SubResource( 48 ), SubResource( 49 ), SubResource( 50 ), SubResource( 51 ) ],
+"loop": false,
+"name": "sit_down",
+"speed": 10.0
+}, {
+"frames": [ SubResource( 39 ), SubResource( 40 ), SubResource( 41 ), SubResource( 42 ), SubResource( 43 ), SubResource( 44 ) ],
+"loop": true,
+"name": "walk",
+"speed": 10.0
+} ]
+
+[node name="Player" type="KinematicBody2D"]
+collision_layer = 2
+collision_mask = 3
+script = ExtResource( 1 )
+runtime_data = ExtResource( 7 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -6, -68 )
+shape = SubResource( 1 )
+
+[node name="Throw" type="Control" parent="."]
+margin_left = -23.0
+margin_top = -204.0
+margin_right = 17.0
+margin_bottom = -164.0
+
+[node name="HSlider" type="HSlider" parent="Throw"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -80.0
+margin_top = 3.0
+margin_right = 81.0
+margin_bottom = 19.0
+custom_styles/slider = SubResource( 3 )
+step = 5.0
+editable = false
+scrollable = false
+tick_count = 4
+ticks_on_borders = true
+script = ExtResource( 2 )
+
+[node name="RedBackground" type="ColorRect" parent="Throw/HSlider"]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 1, 0, 0, 1 )
+
+[node name="GreenBackground" type="ColorRect" parent="Throw/HSlider"]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color( 0, 1, 0.321569, 1 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2( 0, -180 )
+current = true
+zoom = Vector2( 0.7, 0.7 )
+smoothing_speed = 10.0
+drag_margin_top = 0.5
+drag_margin_bottom = 1.0
+editor_draw_drag_margin = true
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( -6, -106 )
+frames = SubResource( 10 )
+animation = "idle"
+playing = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TimerLabel" type="Label" parent="CanvasLayer"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -20.0
+margin_right = 20.0
+margin_bottom = 14.0
+text = "TIMER"
+align = 1
+valign = 1
+script = ExtResource( 6 )
+default_sec = 3
+default_min = 0
+
+[node name="Timer" type="Timer" parent="CanvasLayer/TimerLabel"]
+autostart = true
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/TimerLabel"]
+show_behind_parent = true
+margin_right = 40.0
+margin_bottom = 14.0
+color = Color( 0, 0, 0, 1 )

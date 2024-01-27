@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/Collided Object/props_loker.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Collided Object/props_box.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 104, 5.02289 )
+
+[node name="SlidingLocker" type="StaticBody2D"]
+position = Vector2( 642, 404 )
+rotation = -0.425671
+constant_linear_velocity = Vector2( -200, 1 )
+
+[node name="Sprite3" type="Sprite" parent="."]
+position = Vector2( -2.43134, 53.7968 )
+rotation = 0.418879
+texture = ExtResource( 2 )
+
+[node name="Sprite4" type="Sprite" parent="."]
+position = Vector2( 49.3124, 72.8647 )
+rotation = 0.418879
+texture = ExtResource( 2 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 34.9948, 72.9614 )
+rotation = 0.418879
+texture = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -3.05176e-05, -35.9773 )
+shape = SubResource( 4 )

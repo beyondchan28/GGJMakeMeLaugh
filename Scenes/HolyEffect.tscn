@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://icon.png" type="Texture" id=1]
+[ext_resource path="res://Shader/holy_effect.tres" type="Material" id=2]
+
+[node name="HolyEffect" type="Sprite"]
+material = ExtResource( 2 )
+position = Vector2( 1.90735e-06, 4 )
+scale = Vector2( 1.5, 1.3125 )
+texture = ExtResource( 1 )
