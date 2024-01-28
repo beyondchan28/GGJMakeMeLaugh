@@ -4,6 +4,13 @@
 [ext_resource path="res://icon.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/pickup.gd" type="Script" id=3]
 [ext_resource path="res://Assets/Throw Object/props_class_trophy.png" type="Texture" id=4]
+<<<<<<< Updated upstream
+=======
+[ext_resource path="res://Dialogues/Hit Succes Props/SmallProps_Hit.tres" type="Resource" id=5]
+[ext_resource path="res://Dialogues/Pickup Props/Lemarii_Pickup.tres" type="Resource" id=6]
+[ext_resource path="res://Assets/Sounds/Sfx/Pickup/Bubbles2.wav" type="AudioStream" id=7]
+>>>>>>> Stashed changes
+
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 30, 30 )

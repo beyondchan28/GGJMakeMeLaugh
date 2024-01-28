@@ -1,0 +1,9 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/dialogue.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Avatar/Ndull/dialogue_player_smirk.png" type="Texture" id=2]
+
+[resource]
+script = ExtResource( 1 )
+avatar_texture = ExtResource( 2 )
+dialog_slides = [ "Satu Kursi untukku, satu rumah sakit untukmu" ]

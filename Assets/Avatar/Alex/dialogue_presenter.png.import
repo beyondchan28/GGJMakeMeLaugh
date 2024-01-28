@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/dialogue_player.png-15a467b7930ed41598cc754cb621a133.stex"
+path="res://.import/dialogue_presenter.png-f48be98b190b51b38b00d0ca8780d6f7.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Avatar/dialogue_player.png"
-dest_files=[ "res://.import/dialogue_player.png-15a467b7930ed41598cc754cb621a133.stex" ]
+source_file="res://Assets/Avatar/Alex/dialogue_presenter.png"
+dest_files=[ "res://.import/dialogue_presenter.png-f48be98b190b51b38b00d0ca8780d6f7.stex" ]
 
 [params]
 
