@@ -1,16 +1,32 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=45 format=2]
 
 [ext_resource path="res://Assets/Environment/pixelated_classroomprops.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/door.gd" type="Script" id=2]
-[ext_resource path="res://Dialogues/player.tres" type="Resource" id=3]
+[ext_resource path="res://Dialogues/miss.tres" type="Resource" id=3]
 [ext_resource path="res://Scripts/sit_area.gd" type="Script" id=4]
 [ext_resource path="res://Scripts/dialogue_trigger.gd" type="Script" id=5]
 [ext_resource path="res://Scenes/Pickup.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/Environment/pixelated_background.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Throw Object/props_class_globe.png" type="Texture" id=8]
 [ext_resource path="res://Scenes/Enemy.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Assets/Sounds/Sfx/Kelas/Piala - Victory.ogg" type="AudioStream" id=10]
-[ext_resource path="res://Assets/Sounds/Sfx/Kelas/Globe - Failure.mp3" type="AudioStream" id=11]
+[ext_resource path="res://Assets/Guru/Guru.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Environment/props_teacherchair.png" type="Texture" id=11]
+[ext_resource path="res://Dialogues/Pickup Props/Piala_Pickup.tres" type="Resource" id=12]
+[ext_resource path="res://Dialogues/Pickup Props/Cikrak_Pickup.tres" type="Resource" id=13]
+[ext_resource path="res://Dialogues/Hit Succes Props/SmallProps_Hit.tres" type="Resource" id=14]
+[ext_resource path="res://Dialogues/Hit Succes Props/MediumProps_Hit.tres" type="Resource" id=15]
+[ext_resource path="res://Dialogues/Pickup Props/Globe_Pickup.tres" type="Resource" id=16]
+[ext_resource path="res://Assets/Throw Object/props_serokan.png" type="Texture" id=17]
+[ext_resource path="res://Assets/Throw Object/props_class_sapu.png" type="Texture" id=18]
+[ext_resource path="res://Dialogues/Pickup Props/Sapu_Pickup.tres" type="Resource" id=19]
+[ext_resource path="res://Assets/Throw Object/props_class_bin.png" type="Texture" id=20]
+[ext_resource path="res://Dialogues/Pickup Props/SampahKecil_Pickup.tres" type="Resource" id=21]
+[ext_resource path="res://Assets/Environment/props_studentchair.png" type="Texture" id=22]
+[ext_resource path="res://Assets/NPC/npc.png" type="Texture" id=23]
+[ext_resource path="res://Assets/Sounds/NEW sfx/Kelas (done)/Sapu Cikrak - HAIYAA (1).mp3" type="AudioStream" id=24]
+[ext_resource path="res://Assets/Sounds/NEW sfx/Kelas (done)/Globe - Failure (1).mp3" type="AudioStream" id=25]
+[ext_resource path="res://Assets/Sounds/NEW sfx/Kelas (done)/Sampah - Emotional Damage (1).mp3" type="AudioStream" id=26]
+[ext_resource path="res://Assets/Sounds/NEW sfx/Kelas (done)/Piala - Victory.ogg" type="AudioStream" id=27]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 1 )
@@ -18,13 +34,54 @@ region = Rect2( -8.48706, 1.57823, 935.603, 275.585 )
 
 [sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 1 )
-region = Rect2( 1001.84, 62.3171, 445.822, 354.214 )
+region = Rect2( 1001.84, 62.3171, 372.41, 354.214 )
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 1000, 10 )
 
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 10, 300 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 10 )
+region = Rect2( 576, 0, 192, 222 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 10 )
+region = Rect2( 768, 0, 192, 222 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 10 )
+region = Rect2( 960, 0, 192, 222 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 10 )
+region = Rect2( 1152, 0, 192, 222 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 10 )
+region = Rect2( 0, 0, 192, 222 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 10 )
+region = Rect2( 192, 0, 192, 222 )
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 10 )
+region = Rect2( 384, 0, 192, 222 )
+
+[sub_resource type="SpriteFrames" id=16]
+animations = [ {
+"frames": [ SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ) ],
+"loop": false,
+"name": "angry",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 13 ), SubResource( 14 ), SubResource( 15 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+} ]
 
 [sub_resource type="RectangleShape2D" id=4]
 
@@ -33,6 +90,14 @@ extents = Vector2( 50, 150 )
 
 [sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 20, 20 )
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 23 )
+region = Rect2( 205, 13, 75, 150 )
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 23 )
+region = Rect2( 1, 13, 75, 150 )
 
 [node name="Classroom" type="Node2D"]
 
@@ -66,6 +131,22 @@ position = Vector2( 675, -244 )
 shape = SubResource( 5 )
 
 [node name="Enemy" parent="." instance=ExtResource( 9 )]
+position = Vector2( 280, 413 )
+
+[node name="Teacher" type="Node2D" parent="."]
+position = Vector2( 140, 398 )
+
+[node name="PropsTeacherchair" type="Sprite" parent="Teacher"]
+position = Vector2( -23, 28 )
+texture = ExtResource( 11 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Teacher"]
+position = Vector2( 46, 6 )
+scale = Vector2( 0.729167, 0.837838 )
+frames = SubResource( 16 )
+animation = "idle"
+frame = 1
+playing = true
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2( 896, -143 )
@@ -79,9 +160,10 @@ position = Vector2( 664, 576 )
 shape = SubResource( 4 )
 
 [node name="Doors" type="Node2D" parent="."]
+position = Vector2( 34, 3 )
 
 [node name="Door" type="Area2D" parent="Doors"]
-position = Vector2( 1101, 328 )
+position = Vector2( 1101, 335 )
 collision_layer = 2
 collision_mask = 2
 script = ExtResource( 2 )
@@ -93,7 +175,7 @@ shape = SubResource( 6 )
 position = Vector2( -6, 153 )
 
 [node name="SitArea" type="Area2D" parent="."]
-position = Vector2( 442, 468 )
+position = Vector2( 632, 457 )
 collision_layer = 2
 collision_mask = 2
 script = ExtResource( 4 )
@@ -102,14 +184,71 @@ script = ExtResource( 4 )
 shape = SubResource( 8 )
 
 [node name="Pickup" parent="." instance=ExtResource( 6 )]
-position = Vector2( 903, 442 )
+position = Vector2( 1323, 305 )
+pickup_dialogue = ExtResource( 12 )
+dialogue_if_hit_enemy = ExtResource( 15 )
 anger_damage = 20
-vfx_name = "durian_runtuh"
-sfx_if_hit_enemy = ExtResource( 10 )
+vfx_name = "meteor"
+sfx_if_hit_enemy = ExtResource( 27 )
 
 [node name="Pickup2" parent="." instance=ExtResource( 6 )]
-position = Vector2( 651, 432 )
+position = Vector2( 1374, 304 )
+diff_percentage = 90.0
+pickup_dialogue = ExtResource( 16 )
+dialogue_if_hit_enemy = ExtResource( 15 )
 texture = ExtResource( 8 )
-anger_damage = 40
+anger_damage = 20
 vfx_name = "pocong"
-sfx_if_hit_enemy = ExtResource( 11 )
+sfx_if_hit_enemy = ExtResource( 25 )
+
+[node name="Pickup3" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1516, 452 )
+diff_percentage = 50.0
+pickup_dialogue = ExtResource( 13 )
+dialogue_if_hit_enemy = ExtResource( 14 )
+texture = ExtResource( 17 )
+anger_damage = 10
+vfx_name = "sheep"
+sfx_if_hit_enemy = ExtResource( 24 )
+
+[node name="Pickup4" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1513, 450 )
+diff_percentage = 50.0
+pickup_dialogue = ExtResource( 19 )
+dialogue_if_hit_enemy = ExtResource( 14 )
+texture = ExtResource( 18 )
+anger_damage = 10
+vfx_name = "odong"
+sfx_if_hit_enemy = ExtResource( 24 )
+
+[node name="Pickup5" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1024, 458 )
+diff_percentage = 50.0
+pickup_dialogue = ExtResource( 21 )
+dialogue_if_hit_enemy = ExtResource( 14 )
+texture = ExtResource( 20 )
+anger_damage = 10
+vfx_name = "durian_runtuh"
+sfx_if_hit_enemy = ExtResource( 26 )
+
+[node name="NPCs" type="Node2D" parent="."]
+
+[node name="PropsStudentchair" type="Sprite" parent="NPCs"]
+position = Vector2( 964, 420 )
+texture = ExtResource( 22 )
+
+[node name="Sprite" type="Sprite" parent="NPCs/PropsStudentchair"]
+position = Vector2( 46, -20 )
+texture = SubResource( 17 )
+
+[node name="PropsStudentchair2" type="Sprite" parent="NPCs"]
+position = Vector2( 763, 420 )
+texture = ExtResource( 22 )
+
+[node name="Sprite" type="Sprite" parent="NPCs/PropsStudentchair2"]
+position = Vector2( 46, -20 )
+texture = SubResource( 18 )
+
+[node name="PropsStudentchair3" type="Sprite" parent="NPCs"]
+position = Vector2( 575, 424 )
+texture = ExtResource( 22 )

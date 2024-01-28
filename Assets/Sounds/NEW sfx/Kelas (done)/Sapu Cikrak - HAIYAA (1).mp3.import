@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Sapu Cikrak - HAIYAA (1).mp3-f9a38e5bd96d99ce32d8c3634d0e545f.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sounds/NEW sfx/Kelas (done)/Sapu Cikrak - HAIYAA (1).mp3"
+dest_files=[ "res://.import/Sapu Cikrak - HAIYAA (1).mp3-f9a38e5bd96d99ce32d8c3634d0e545f.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

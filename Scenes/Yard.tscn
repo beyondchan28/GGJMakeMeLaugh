@@ -1,0 +1,91 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://Assets/Environment/pixelated_background_schoolyard.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Environment/pixelated_schoolyardprops.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/door.gd" type="Script" id=3]
+[ext_resource path="res://Dialogues/Hit Succes Props/MediumProps_Hit.tres" type="Resource" id=4]
+[ext_resource path="res://Scenes/Pickup.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Dialogues/Pickup Props/Tiang_Pickup.tres" type="Resource" id=6]
+[ext_resource path="res://Dialogues/Pickup Props/SampahBesar,Cone,Box_Pickup.tres" type="Resource" id=7]
+[ext_resource path="res://Assets/Throw Object/props_yard_pole.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Throw Object/props_corridor_greenbin.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Sounds/NEW sfx/Lapangan (done)/Tiang - Metal Pipe.mp3" type="AudioStream" id=10]
+[ext_resource path="res://Assets/Sounds/NEW sfx/Lapangan (done)/Sampah - Emotional Damage.mp3" type="AudioStream" id=11]
+[ext_resource path="res://Assets/Throw Object/props_yard_bluecycle.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Sounds/NEW sfx/Lapangan (done)/Sepeda - Boing.mp3" type="AudioStream" id=13]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 1000, 10 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 10, 300 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 50, 150 )
+
+[node name="Yard" type="Node2D"]
+
+[node name="Background" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="School" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+centered = false
+
+[node name="Ground" type="StaticBody2D" parent="."]
+position = Vector2( 964, 458 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Ground"]
+position = Vector2( -973, -248 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Ground"]
+position = Vector2( 485, -251 )
+shape = SubResource( 2 )
+
+[node name="Doors" type="Node2D" parent="."]
+position = Vector2( 34, 3 )
+
+[node name="Door" type="Area2D" parent="Doors"]
+position = Vector2( 691, 292 )
+collision_layer = 2
+collision_mask = 2
+script = ExtResource( 3 )
+from_level_part_name = "Yard"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Doors/Door"]
+shape = SubResource( 3 )
+
+[node name="DoorPos" type="Position2D" parent="Doors/Door"]
+position = Vector2( -6, 153 )
+
+[node name="Pickup" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1197, 391 )
+pickup_dialogue = ExtResource( 7 )
+dialogue_if_hit_enemy = ExtResource( 4 )
+texture = ExtResource( 9 )
+anger_damage = 20
+vfx_name = "pocong"
+sfx_if_hit_enemy = ExtResource( 11 )
+
+[node name="Pickup2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 297, 411 )
+pickup_dialogue = ExtResource( 6 )
+dialogue_if_hit_enemy = ExtResource( 4 )
+texture = ExtResource( 8 )
+anger_damage = 20
+vfx_name = "sheep"
+sfx_if_hit_enemy = ExtResource( 10 )
+
+[node name="Pickup3" parent="." instance=ExtResource( 5 )]
+position = Vector2( 481, 383 )
+pickup_dialogue = ExtResource( 6 )
+dialogue_if_hit_enemy = ExtResource( 4 )
+texture = ExtResource( 12 )
+anger_damage = 20
+vfx_name = "sheep"
+sfx_if_hit_enemy = ExtResource( 13 )

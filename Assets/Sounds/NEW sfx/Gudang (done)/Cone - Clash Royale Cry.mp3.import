@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Cone - Clash Royale Cry.mp3-19e35e49127649f55a64cb6fe8ec7534.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sounds/NEW sfx/Gudang (done)/Cone - Clash Royale Cry.mp3"
+dest_files=[ "res://.import/Cone - Clash Royale Cry.mp3-19e35e49127649f55a64cb6fe8ec7534.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Tiang - Metal Pipe.mp3-dac4e4154344d89fdf104d32291bf789.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sounds/NEW sfx/Lapangan (done)/Tiang - Metal Pipe.mp3"
+dest_files=[ "res://.import/Tiang - Metal Pipe.mp3-dac4e4154344d89fdf104d32291bf789.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

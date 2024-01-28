@@ -317,7 +317,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id=33]
 resource_name = "sheep"
-length = 2.0
+length = 2.2
 tracks/0/type = "value"
 tracks/0/path = NodePath("VFX/Sheep:visible")
 tracks/0/interp = 1
@@ -337,10 +337,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 1, 1.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 406, 258 ) ]
+"values": [ Vector2( 406, 258 ), Vector2( 284, 74 ), Vector2( 110, -2 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("VFX/Sheep:rotation_degrees")
@@ -349,10 +349,10 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 1, 1.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ 0.0 ]
+"values": [ 0.0, 90.0, 360.0 ]
 }
 
 [sub_resource type="AtlasTexture" id=18]
@@ -532,5 +532,4 @@ anims/sheep = SubResource( 33 )
 position = Vector2( 22, -20 )
 frames = SubResource( 17 )
 animation = "idle"
-frame = 2
 playing = true

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Sampah - Emotional Damage.mp3-5569bd13f2ac1c44ae5f6e99a4f524d6.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sounds/NEW sfx/Lapangan (done)/Sampah - Emotional Damage.mp3"
+dest_files=[ "res://.import/Sampah - Emotional Damage.mp3-5569bd13f2ac1c44ae5f6e99a4f524d6.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

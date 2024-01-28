@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Pickup - It_s Mine.mp3-0daa3db56e813e596fdac03a4283d1e0.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sounds/NEW sfx/Public (done)/Pickup - It_s Mine.mp3"
+dest_files=[ "res://.import/Pickup - It_s Mine.mp3-0daa3db56e813e596fdac03a4283d1e0.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

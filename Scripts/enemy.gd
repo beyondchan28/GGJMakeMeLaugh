@@ -17,8 +17,6 @@ func pissed_off(anger_damage):
 
 func anger_meter_changed(val: float):
 	print(val)
-	if val < 50.0:
-		print("First Ending")
-	else:
-		print("Other Ending")
-		
+	if val >= 100.0:
+		get_parent().get_parent().get_node("Player").get_tree().paused = true
+		get_parent().get_parent().get_node("Player/CanvasLayer/GameOverUI").popup()

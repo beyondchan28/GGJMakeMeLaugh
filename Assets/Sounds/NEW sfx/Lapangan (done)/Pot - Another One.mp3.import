@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Pot - Another One.mp3-d080781bb490231fe764f28be8a9862f.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sounds/NEW sfx/Lapangan (done)/Pot - Another One.mp3"
+dest_files=[ "res://.import/Pot - Another One.mp3-d080781bb490231fe764f28be8a9862f.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

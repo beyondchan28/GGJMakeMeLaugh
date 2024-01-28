@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Throwing - Wee.mp3-c3639e64cc4cf03520e2839b6a278ebe.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sounds/NEW sfx/Public (done)/Throwing - Wee.mp3"
+dest_files=[ "res://.import/Throwing - Wee.mp3-c3639e64cc4cf03520e2839b6a278ebe.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

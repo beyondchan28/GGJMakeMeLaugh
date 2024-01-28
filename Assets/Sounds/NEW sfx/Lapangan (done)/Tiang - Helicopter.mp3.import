@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Tiang - Helicopter.mp3-e79ec0ebc5e63b499e7bf16f565cd73f.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sounds/NEW sfx/Lapangan (done)/Tiang - Helicopter.mp3"
+dest_files=[ "res://.import/Tiang - Helicopter.mp3-e79ec0ebc5e63b499e7bf16f565cd73f.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

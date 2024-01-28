@@ -54,7 +54,7 @@ func _physics_process(delta):
 			if fraction == true :
 				motion.x = lerp(motion.x, 0, 0.2)
 		elif not self.is_on_floor():
-			play_anim("fall")
+#			play_anim("fall")
 			if fraction == true :
 				motion.x = lerp(motion.x, 0, 0.05)
 		

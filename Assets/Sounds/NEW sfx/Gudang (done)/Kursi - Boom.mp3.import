@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Kursi - Boom.mp3-f730779ff4cc5e4151dc10960f81942b.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sounds/NEW sfx/Gudang (done)/Kursi - Boom.mp3"
+dest_files=[ "res://.import/Kursi - Boom.mp3-f730779ff4cc5e4151dc10960f81942b.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

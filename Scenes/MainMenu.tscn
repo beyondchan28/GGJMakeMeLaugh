@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scripts/main_menu.gd" type="Script" id=1]
 [ext_resource path="res://Assets/MainMenuUI/titlescreen.png" type="Texture" id=2]
@@ -7,6 +7,11 @@
 [ext_resource path="res://Assets/MainMenuUI/button_exit_on.png" type="Texture" id=5]
 [ext_resource path="res://Assets/MainMenuUI/button_credits_on.png" type="Texture" id=6]
 [ext_resource path="res://Assets/MainMenuUI/howtoplay.png" type="Texture" id=7]
+[ext_resource path="res://Assets/MainMenuUI/button_credits_off.png" type="Texture" id=8]
+[ext_resource path="res://Assets/MainMenuUI/button_play_off.png" type="Texture" id=9]
+[ext_resource path="res://Assets/MainMenuUI/button_howtoplay_off.png" type="Texture" id=10]
+[ext_resource path="res://Assets/MainMenuUI/button_exit_off.png" type="Texture" id=11]
+[ext_resource path="res://Assets/MainMenuUI/credits.png" type="Texture" id=12]
 
 [node name="MainMenu" type="Control"]
 anchor_right = 1.0
@@ -33,7 +38,7 @@ margin_left = -54.5
 margin_top = -85.0
 margin_right = 129.5
 margin_bottom = -45.0
-texture_normal = ExtResource( 4 )
+texture_normal = ExtResource( 9 )
 texture_pressed = ExtResource( 4 )
 stretch_mode = 2
 
@@ -42,7 +47,7 @@ margin_left = 126.5
 margin_top = -49.0
 margin_right = 387.5
 margin_bottom = 7.0
-texture_normal = ExtResource( 3 )
+texture_normal = ExtResource( 10 )
 texture_pressed = ExtResource( 3 )
 
 [node name="CreditButton" type="TextureButton" parent="ButtonContainer"]
@@ -50,7 +55,7 @@ margin_left = -283.5
 margin_top = -25.0
 margin_right = -39.5
 margin_bottom = 31.0
-texture_normal = ExtResource( 6 )
+texture_normal = ExtResource( 8 )
 texture_pressed = ExtResource( 6 )
 
 [node name="ExitButton" type="TextureButton" parent="ButtonContainer"]
@@ -58,7 +63,7 @@ margin_left = -21.5
 margin_top = 13.0
 margin_right = 146.5
 margin_bottom = 57.0
-texture_normal = ExtResource( 5 )
+texture_normal = ExtResource( 11 )
 texture_pressed = ExtResource( 5 )
 
 [node name="CreditPopup" type="Popup" parent="."]
@@ -66,104 +71,28 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -250.0
+margin_left = -405.0
 margin_top = -250.0
-margin_right = 250.0
+margin_right = 405.0
 margin_bottom = 250.0
 
-[node name="CreditBackground" type="ColorRect" parent="CreditPopup"]
+[node name="CreditBackground" type="TextureRect" parent="CreditPopup"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -250.0
+margin_left = -400.0
 margin_top = -250.0
-margin_right = 250.0
+margin_right = 400.0
 margin_bottom = 250.0
-color = Color( 0.654902, 0.647059, 0.647059, 1 )
-
-[node name="Title" type="Label" parent="CreditPopup/CreditBackground"]
-anchor_left = 0.5
-anchor_right = 0.5
-margin_left = -12.0
-margin_top = 61.0
-margin_right = 28.0
-margin_bottom = 75.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Credit"
-align = 1
-valign = 1
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CreditPopup/CreditBackground"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -71.0
-margin_top = -34.0
-margin_right = 71.0
-margin_bottom = 34.0
-
-[node name="Label" type="Label" parent="CreditPopup/CreditBackground/VBoxContainer"]
-margin_right = 142.0
-margin_bottom = 14.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Programmer : Chandra"
-
-[node name="ColorRect" type="ColorRect" parent="CreditPopup/CreditBackground/VBoxContainer/Label"]
-show_behind_parent = true
-anchor_right = 1.0
-anchor_bottom = 1.0
-color = Color( 0.988235, 0.988235, 0.988235, 1 )
-
-[node name="Label2" type="Label" parent="CreditPopup/CreditBackground/VBoxContainer"]
-margin_top = 18.0
-margin_right = 142.0
-margin_bottom = 32.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Programmer : Chandra"
-
-[node name="ColorRect" type="ColorRect" parent="CreditPopup/CreditBackground/VBoxContainer/Label2"]
-show_behind_parent = true
-anchor_right = 1.0
-anchor_bottom = 1.0
-color = Color( 0.988235, 0.988235, 0.988235, 1 )
-
-[node name="Label3" type="Label" parent="CreditPopup/CreditBackground/VBoxContainer"]
-margin_top = 36.0
-margin_right = 142.0
-margin_bottom = 50.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Programmer : Chandra"
-
-[node name="ColorRect" type="ColorRect" parent="CreditPopup/CreditBackground/VBoxContainer/Label3"]
-show_behind_parent = true
-anchor_right = 1.0
-anchor_bottom = 1.0
-color = Color( 0.988235, 0.988235, 0.988235, 1 )
-
-[node name="Label4" type="Label" parent="CreditPopup/CreditBackground/VBoxContainer"]
-margin_top = 54.0
-margin_right = 142.0
-margin_bottom = 68.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Programmer : Chandra"
-
-[node name="ColorRect" type="ColorRect" parent="CreditPopup/CreditBackground/VBoxContainer/Label4"]
-show_behind_parent = true
-anchor_right = 1.0
-anchor_bottom = 1.0
-color = Color( 0.988235, 0.988235, 0.988235, 1 )
+texture = ExtResource( 12 )
+expand = true
 
 [node name="CloseButton" type="Button" parent="CreditPopup"]
 anchor_left = 1.0
-anchor_top = 1.0
 anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -123.0
-margin_top = -57.0
-margin_right = -20.0
-margin_bottom = -19.0
+margin_left = -103.0
+margin_bottom = 38.0
 text = "Close"
 
 [node name="HowToPlayPopup" type="Popup" parent="."]
@@ -171,22 +100,23 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -250.0
-margin_top = -250.0
-margin_right = 250.0
-margin_bottom = 250.0
+margin_left = -400.0
+margin_top = -247.0
+margin_right = 400.0
+margin_bottom = 247.0
 
 [node name="CreditBackground" type="TextureRect" parent="HowToPlayPopup"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -250.0
+margin_left = -400.0
 margin_top = -250.0
-margin_right = 250.0
+margin_right = 400.0
 margin_bottom = 250.0
 texture = ExtResource( 7 )
 expand = true
+stretch_mode = 1
 
 [node name="CloseButton" type="Button" parent="HowToPlayPopup"]
 anchor_left = 1.0
