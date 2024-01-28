@@ -4,6 +4,7 @@
 [ext_resource path="res://icon.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/pickup.gd" type="Script" id=3]
 [ext_resource path="res://Assets/Throw Object/props_class_trophy.png" type="Texture" id=4]
+
 [ext_resource path="res://Dialogues/piala_pickup.tres" type="Resource" id=5]
 [ext_resource path="res://Dialogues/piala_kena.tres" type="Resource" id=6]
 [ext_resource path="res://Assets/Sounds/Sfx/Pickup/Bubbles2.wav" type="AudioStream" id=7]

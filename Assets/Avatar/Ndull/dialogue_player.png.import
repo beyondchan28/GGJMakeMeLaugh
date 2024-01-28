@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/dialogue_teacher.png-c278fe8baa69a814cd08e7bc8bd8a96b.stex"
+path="res://.import/dialogue_player.png-a085263f77b9a6b4a8ddc5634bd3b3e0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Avatar/dialogue_teacher.png"
-dest_files=[ "res://.import/dialogue_teacher.png-c278fe8baa69a814cd08e7bc8bd8a96b.stex" ]
+source_file="res://Assets/Avatar/Ndull/dialogue_player.png"
+dest_files=[ "res://.import/dialogue_player.png-a085263f77b9a6b4a8ddc5634bd3b3e0.stex" ]
 
 [params]
 

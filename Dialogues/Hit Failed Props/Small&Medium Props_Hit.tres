@@ -1,0 +1,9 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/dialogue.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Avatar/Bu Anita/dialogue_teacher_smile.png" type="Texture" id=2]
+
+[resource]
+script = ExtResource( 1 )
+avatar_texture = ExtResource( 2 )
+dialog_slides = [ "Ndull, Kenapa kamu terus melempar barang ke Alex? Apa urusannya?", "kalau mau mengungkapkan perasaan bukan gitu caranyaa, ada cara yang lebih baik kan ?" ]
