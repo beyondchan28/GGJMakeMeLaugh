@@ -59,7 +59,7 @@ func colliding(area):
 	GameEvents.emit_signal("dialog_initiated", dialogue_when_hit)
 	$VisibilityNotifier2D.disconnect("screen_exited", self, "exit_screen")
 	play_vfx(area, vfx_name)
-	queue_free()
+	
 
 func exit_screen():
 #	print("ExitScreen")
@@ -70,3 +70,7 @@ func play_vfx(enemy, anim_name: String = ""):
 	if anim_name != "":
 		enemy.get_node("AnimationPlayer").play(anim_name)
 		yield(enemy.get_node("AnimationPlayer"), "animation_finished")
+		queue_free()
+	else:
+		queue_free()
+		

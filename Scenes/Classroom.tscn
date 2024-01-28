@@ -108,3 +108,4 @@ vfx_name = "durian_runtuh"
 position = Vector2( 651, 432 )
 texture = ExtResource( 8 )
 anger_damage = 40
+vfx_name = "pocong"
