@@ -1,0 +1,9 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/dialogue.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Avatar/dialogue_player.png" type="Texture" id=2]
+
+[resource]
+script = ExtResource( 1 )
+avatar_texture = ExtResource( 2 )
+dialog_slides = [ "Saya pikir piala ini dapat menjadi guru kita...", "Bagaimana caranya ?", "Gampang ! kita cukup menatap piala ini dengan serius dan BAM !", "Pelajaran kehidupan akan muncul di kepala kita." ]

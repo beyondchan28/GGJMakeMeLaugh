@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Lemari - Noot Noot.mp3-4753a49263affbc5d775f289262c6995.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sounds/Sfx/Gudang/Lemari - Noot Noot.mp3"
+dest_files=[ "res://.import/Lemari - Noot Noot.mp3-4753a49263affbc5d775f289262c6995.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Meja - Yahoo.mp3-b8c3043b0af1a1cbe53ae8f92a291292.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sounds/Sfx/Gudang/Meja - Yahoo.mp3"
+dest_files=[ "res://.import/Meja - Yahoo.mp3-b8c3043b0af1a1cbe53ae8f92a291292.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

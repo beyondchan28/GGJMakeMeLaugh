@@ -1,6 +1,7 @@
 [gd_resource type="Resource" load_steps=3 format=2]
 
 [ext_resource path="res://Scripts/dialogue.gd" type="Script" id=1]
+
 [ext_resource path="res://Assets/Avatar/Ndull/dialogue_player.png" type="Texture" id=2]
 
 [resource]

@@ -18,10 +18,16 @@ _global_script_classes=[ {
 "class": "RuntimeData",
 "language": "GDScript",
 "path": "res://Scripts/runtime_data.gd"
+}, {
+"base": "Object",
+"class": "SceneManagerConstants",
+"language": "GDScript",
+"path": "res://addons/scene_manager/SceneManagerConstants.gd"
 } ]
 _global_script_class_icons={
 "Dialogue": "",
-"RuntimeData": ""
+"RuntimeData": "",
+"SceneManagerConstants": ""
 }
 
 [application]

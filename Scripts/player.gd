@@ -17,6 +17,7 @@ var is_has_throw_obj := false
 onready var thrown_obj = preload("res://Scenes/ThrownObject.tscn")
 onready var enemy = self.get_parent().get_node("Classroom/Enemy")
 onready var anim = $AnimatedSprite
+onready var sound_player = $SoundPlayer
 
 var obj_to_throw
 
@@ -30,11 +31,16 @@ func _physics_process(delta):
 			motion.x = min(motion.x + ACCELERATION, MAX_SPEED)
 			anim.set_flip_h(false)
 			play_anim("walk")
+			if self.is_on_floor():
+				sound_player.play("walk")
 		elif Input.is_action_pressed("left"):
 			motion.x = max(motion.x - ACCELERATION, -MAX_SPEED)
 			anim.set_flip_h(true)
 			play_anim("walk")
+			if self.is_on_floor():
+				sound_player.play("walk")
 		else:
+			sound_player.stop()
 			play_anim("idle")
 			fraction = true
 		
@@ -43,6 +49,7 @@ func _physics_process(delta):
 			if Input.is_action_just_pressed("jump"):
 				curr_state = STATES.JUMP
 				play_anim("jump")
+				sound_player.play("jump")
 				motion.y = JUMP_HEIGHT 
 			if fraction == true :
 				motion.x = lerp(motion.x, 0, 0.2)
@@ -61,10 +68,12 @@ func play_anim(anim_name):
 		return
 	anim.play(anim_name)
 
-func set_throw_obj(texture: Texture, anger_damage: int ):
+func set_throw_obj(texture: Texture, anger_damage: int, dialogue_if_hit_enemy: Resource, vfx_name: String):
 	is_has_throw_obj = true
 	obj_to_throw = thrown_obj.instance()
 	obj_to_throw.damage = anger_damage
+	obj_to_throw.vfx_name = vfx_name
+	obj_to_throw.dialogue_when_hit = dialogue_if_hit_enemy
 	obj_to_throw.get_node("Sprite").set_texture(texture)
 
 func throw(target_pos):

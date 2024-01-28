@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=2]
+[gd_scene load_steps=62 format=2]
 
 [ext_resource path="res://Scripts/player.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/throw_mechanic.gd" type="Script" id=2]
@@ -7,6 +7,13 @@
 [ext_resource path="res://Assets/Player/semua aset karakter utama.png" type="Texture" id=5]
 [ext_resource path="res://Scripts/timer.gd" type="Script" id=6]
 [ext_resource path="res://RuntimeData/runtime_data.tres" type="Resource" id=7]
+[ext_resource path="res://Scenes/InGameMenu.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scripts/pause_button.gd" type="Script" id=9]
+[ext_resource path="res://Scenes/GameOverUI.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Dialogues/already_had_object.tres" type="Resource" id=11]
+[ext_resource path="res://Assets/Sounds/Sfx/FootStep/FootStepGeneric2.wav" type="AudioStream" id=12]
+[ext_resource path="res://Assets/Sounds/Sfx/FootStep/FootStepGeneric1.wav" type="AudioStream" id=13]
+[ext_resource path="res://Assets/Sounds/Sfx/FootStep/Stomp3.wav" type="AudioStream" id=14]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 18.0
@@ -236,6 +243,46 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=52]
 extents = Vector2( 70, 70 )
 
+[sub_resource type="Animation" id=86]
+resource_name = "jump"
+length = 0.3
+tracks/0/type = "audio"
+tracks/0/path = NodePath("AudioStreamPlayer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 14 )
+} ],
+"times": PoolRealArray( 0 )
+}
+
+[sub_resource type="Animation" id=85]
+resource_name = "walk"
+length = 0.8
+tracks/0/type = "audio"
+tracks/0/path = NodePath("AudioStreamPlayer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 13 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 12 )
+} ],
+"times": PoolRealArray( 0.1, 0.5 )
+}
+
 [node name="Player" type="KinematicBody2D"]
 collision_layer = 2
 collision_mask = 3
@@ -295,8 +342,8 @@ editor_draw_drag_margin = true
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 0, -106 )
 frames = SubResource( 10 )
-animation = "throw"
-frame = 11
+animation = "walk"
+frame = 3
 playing = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -323,10 +370,25 @@ margin_right = 40.0
 margin_bottom = 14.0
 color = Color( 0, 0, 0, 1 )
 
+[node name="InGameMenu" parent="CanvasLayer" instance=ExtResource( 8 )]
+
+[node name="PauseButton" type="Button" parent="CanvasLayer"]
+pause_mode = 2
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -53.0
+margin_bottom = 20.0
+text = "PAUSE"
+script = ExtResource( 9 )
+
+[node name="GameOverUI" parent="CanvasLayer" instance=ExtResource( 10 )]
+visible = false
+
 [node name="ThrowObjectDetector" type="Area2D" parent="."]
 collision_layer = 8
 collision_mask = 8
 script = ExtResource( 4 )
+dialogue_when_had_object = ExtResource( 11 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ThrowObjectDetector"]
 position = Vector2( 0, -75 )
@@ -334,3 +396,11 @@ shape = SubResource( 52 )
 
 [node name="ThrowPos" type="Position2D" parent="."]
 position = Vector2( -32, -131 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 14 )
+bus = "PlayerSFX"
+
+[node name="SoundPlayer" type="AnimationPlayer" parent="."]
+anims/jump = SubResource( 86 )
+anims/walk = SubResource( 85 )

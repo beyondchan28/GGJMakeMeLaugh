@@ -1,16 +1,13 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scenes/HolyEffect.tscn" type="PackedScene" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/pickup.gd" type="Script" id=3]
 [ext_resource path="res://Assets/Throw Object/props_class_trophy.png" type="Texture" id=4]
-<<<<<<< Updated upstream
-=======
-[ext_resource path="res://Dialogues/Hit Succes Props/SmallProps_Hit.tres" type="Resource" id=5]
-[ext_resource path="res://Dialogues/Pickup Props/Lemarii_Pickup.tres" type="Resource" id=6]
-[ext_resource path="res://Assets/Sounds/Sfx/Pickup/Bubbles2.wav" type="AudioStream" id=7]
->>>>>>> Stashed changes
 
+[ext_resource path="res://Dialogues/piala_pickup.tres" type="Resource" id=5]
+[ext_resource path="res://Dialogues/piala_kena.tres" type="Resource" id=6]
+[ext_resource path="res://Assets/Sounds/Sfx/Pickup/Bubbles2.wav" type="AudioStream" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 30, 30 )
@@ -19,6 +16,8 @@ extents = Vector2( 30, 30 )
 collision_layer = 8
 collision_mask = 8
 script = ExtResource( 3 )
+pickup_dialogue = ExtResource( 5 )
+dialogue_if_hit_enemy = ExtResource( 6 )
 texture = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -32,4 +31,6 @@ texture = ExtResource( 2 )
 [node name="HolyEffect" parent="." instance=ExtResource( 1 )]
 visible = false
 
-[node name="SFX" type="AudioStreamPlayer2D" parent="."]
+[node name="SFXPickup" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+bus = "GameplaySFX"

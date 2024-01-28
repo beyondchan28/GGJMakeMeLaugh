@@ -1,0 +1,232 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/main_menu.gd" type="Script" id=1]
+
+[node name="MainMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="Background" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.372549, 0.372549, 0.372549, 1 )
+
+[node name="Title" type="Label" parent="Background"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -40.0
+margin_top = 175.0
+margin_right = 38.0
+margin_bottom = 189.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Bully Buster"
+align = 1
+valign = 1
+
+[node name="ColorRect" type="ColorRect" parent="Background/Title"]
+show_behind_parent = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -107.5
+margin_top = -20.0
+margin_right = 107.5
+margin_bottom = 20.0
+
+[node name="ButtonContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -51.5
+margin_top = -46.0
+margin_right = 51.5
+margin_bottom = 46.0
+
+[node name="PlayButton" type="Button" parent="ButtonContainer"]
+margin_right = 103.0
+margin_bottom = 20.0
+text = "PLAY"
+
+[node name="HowToPlayButton" type="Button" parent="ButtonContainer"]
+margin_top = 24.0
+margin_right = 103.0
+margin_bottom = 44.0
+text = "HOW TO PLAY"
+
+[node name="CreditButton" type="Button" parent="ButtonContainer"]
+margin_top = 48.0
+margin_right = 103.0
+margin_bottom = 68.0
+text = "CREDIT"
+
+[node name="ExitButton" type="Button" parent="ButtonContainer"]
+margin_top = 72.0
+margin_right = 103.0
+margin_bottom = 92.0
+text = "EXIT"
+
+[node name="CreditPopup" type="Popup" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -250.0
+margin_top = -250.0
+margin_right = 250.0
+margin_bottom = 250.0
+
+[node name="CreditBackground" type="ColorRect" parent="CreditPopup"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -250.0
+margin_top = -250.0
+margin_right = 250.0
+margin_bottom = 250.0
+color = Color( 0.654902, 0.647059, 0.647059, 1 )
+
+[node name="Title" type="Label" parent="CreditPopup/CreditBackground"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -12.0
+margin_top = 61.0
+margin_right = 28.0
+margin_bottom = 75.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Credit"
+align = 1
+valign = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CreditPopup/CreditBackground"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -71.0
+margin_top = -34.0
+margin_right = 71.0
+margin_bottom = 34.0
+
+[node name="Label" type="Label" parent="CreditPopup/CreditBackground/VBoxContainer"]
+margin_right = 142.0
+margin_bottom = 14.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Programmer : Chandra"
+
+[node name="ColorRect" type="ColorRect" parent="CreditPopup/CreditBackground/VBoxContainer/Label"]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.988235, 0.988235, 0.988235, 1 )
+
+[node name="Label2" type="Label" parent="CreditPopup/CreditBackground/VBoxContainer"]
+margin_top = 18.0
+margin_right = 142.0
+margin_bottom = 32.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Programmer : Chandra"
+
+[node name="ColorRect" type="ColorRect" parent="CreditPopup/CreditBackground/VBoxContainer/Label2"]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.988235, 0.988235, 0.988235, 1 )
+
+[node name="Label3" type="Label" parent="CreditPopup/CreditBackground/VBoxContainer"]
+margin_top = 36.0
+margin_right = 142.0
+margin_bottom = 50.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Programmer : Chandra"
+
+[node name="ColorRect" type="ColorRect" parent="CreditPopup/CreditBackground/VBoxContainer/Label3"]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.988235, 0.988235, 0.988235, 1 )
+
+[node name="Label4" type="Label" parent="CreditPopup/CreditBackground/VBoxContainer"]
+margin_top = 54.0
+margin_right = 142.0
+margin_bottom = 68.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Programmer : Chandra"
+
+[node name="ColorRect" type="ColorRect" parent="CreditPopup/CreditBackground/VBoxContainer/Label4"]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.988235, 0.988235, 0.988235, 1 )
+
+[node name="CloseButton" type="Button" parent="CreditPopup"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -123.0
+margin_top = -57.0
+margin_right = -20.0
+margin_bottom = -19.0
+text = "Close"
+
+[node name="HowToPlayPopup" type="Popup" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -250.0
+margin_top = -250.0
+margin_right = 250.0
+margin_bottom = 250.0
+
+[node name="CreditBackground" type="ColorRect" parent="HowToPlayPopup"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -250.0
+margin_top = -250.0
+margin_right = 250.0
+margin_bottom = 250.0
+color = Color( 0.654902, 0.647059, 0.647059, 1 )
+
+[node name="Title" type="Label" parent="HowToPlayPopup/CreditBackground"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -40.0
+margin_top = 112.0
+margin_right = 37.0
+margin_bottom = 126.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "How To Play"
+align = 1
+valign = 1
+
+[node name="Howto" type="Label" parent="HowToPlayPopup/CreditBackground"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -151.5
+margin_top = -7.0
+margin_right = 151.5
+margin_bottom = 7.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Tell about inputs and briefs description about it"
+align = 1
+valign = 1
+
+[node name="CloseButton" type="Button" parent="HowToPlayPopup"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -123.0
+margin_top = -57.0
+margin_right = -20.0
+margin_bottom = -19.0
+text = "Close"
