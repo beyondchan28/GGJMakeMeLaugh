@@ -1,6 +1,7 @@
 extends Area2D
 
 onready var player = get_parent()
+export(Resource) var dialogue_when_had_object = dialogue_when_had_object as Dialogue
 
 func _ready():
 	self.connect("area_entered", self, "object_detected")
@@ -15,8 +16,12 @@ func _physics_process(delta):
 				player.set_throw_obj(area.texture, area.anger_damage, area.dialogue_if_hit_enemy, area.vfx_name)
 				player.get_node("Throw/HSlider").set_calc_diff(area.diff_percentage)
 				GameEvents.emit_signal("dialog_initiated", area.pickup_dialogue)
+				area.get_node("SFXPickup").playing = true
+				yield(area.get_node("SFXPickup"), "finished")
 				area.queue_free()
 				self.set_physics_process(false)
+			elif player.is_has_throw_obj and Input.is_action_just_pressed("interact"):
+				GameEvents.emit_signal("dialog_initiated", dialogue_when_had_object)
 
 func object_detected(area):
 	area.get_node("HolyEffect").set_visible(true)

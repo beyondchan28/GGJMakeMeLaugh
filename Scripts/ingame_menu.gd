@@ -9,10 +9,10 @@ func back_to_main_menu():
 	get_tree().paused = false
 	SceneManager.change_scene("res://Scenes/MainMenu.tscn", {"pattern" : "curtains"})
 
-func unpaused():
-	get_tree().paused = false
-	
-
 func resume():
 #	get_tree().paused = false
 	self.hide()
+
+func unpaused():
+	get_tree().paused = false
+	

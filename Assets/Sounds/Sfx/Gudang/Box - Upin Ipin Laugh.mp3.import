@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Box - Upin Ipin Laugh.mp3-0ddcb5c50aefef32ed1eee6cdf5227c0.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sounds/Sfx/Gudang/Box - Upin Ipin Laugh.mp3"
+dest_files=[ "res://.import/Box - Upin Ipin Laugh.mp3-0ddcb5c50aefef32ed1eee6cdf5227c0.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

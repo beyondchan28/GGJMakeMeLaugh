@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Cone - King Cry.mp3-15519c5cd2b6099fbf28febc3b95f043.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sounds/Sfx/Gudang/Cone - King Cry.mp3"
+dest_files=[ "res://.import/Cone - King Cry.mp3-15519c5cd2b6099fbf28febc3b95f043.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

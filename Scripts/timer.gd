@@ -19,6 +19,8 @@ func timeout():
 	
 	if curr_min == 0 and curr_sec == 0:
 		$Timer.stop()
+#		get_tree().paused = true
+#		get_parent().get_node("GameOverUI").popup()
 		print("YOU LOSE !")
 	
 	self.text = String(curr_min) + ":" + String(curr_sec)

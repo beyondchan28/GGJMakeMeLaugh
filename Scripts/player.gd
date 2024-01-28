@@ -17,6 +17,7 @@ var is_has_throw_obj := false
 onready var thrown_obj = preload("res://Scenes/ThrownObject.tscn")
 onready var enemy = self.get_parent().get_node("Classroom/Enemy")
 onready var anim = $AnimatedSprite
+onready var sound_player = $SoundPlayer
 
 var obj_to_throw
 
@@ -30,11 +31,16 @@ func _physics_process(delta):
 			motion.x = min(motion.x + ACCELERATION, MAX_SPEED)
 			anim.set_flip_h(false)
 			play_anim("walk")
+			if self.is_on_floor():
+				sound_player.play("walk")
 		elif Input.is_action_pressed("left"):
 			motion.x = max(motion.x - ACCELERATION, -MAX_SPEED)
 			anim.set_flip_h(true)
 			play_anim("walk")
+			if self.is_on_floor():
+				sound_player.play("walk")
 		else:
+			sound_player.stop()
 			play_anim("idle")
 			fraction = true
 		
@@ -43,6 +49,7 @@ func _physics_process(delta):
 			if Input.is_action_just_pressed("jump"):
 				curr_state = STATES.JUMP
 				play_anim("jump")
+				sound_player.play("jump")
 				motion.y = JUMP_HEIGHT 
 			if fraction == true :
 				motion.x = lerp(motion.x, 0, 0.2)

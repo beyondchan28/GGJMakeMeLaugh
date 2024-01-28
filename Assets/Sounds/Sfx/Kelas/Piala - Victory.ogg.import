@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Piala - Victory.ogg-a00fa71fe6c824fbfbe6c436cb8dc7cc.oggstr"
+
+[deps]
+
+source_file="res://Assets/Sounds/Sfx/Kelas/Piala - Victory.ogg"
+dest_files=[ "res://.import/Piala - Victory.ogg-a00fa71fe6c824fbfbe6c436cb8dc7cc.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

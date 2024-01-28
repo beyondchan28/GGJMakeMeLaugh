@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Kursi - Skidi Boom.mp3-ae9976204724360d50aa9eda0e4b574c.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sounds/Sfx/Gudang/Kursi - Skidi Boom.mp3"
+dest_files=[ "res://.import/Kursi - Skidi Boom.mp3-ae9976204724360d50aa9eda0e4b574c.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

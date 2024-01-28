@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/APAR - Metal Hit.mp3-e2cf7a1cfd3c405d05ecb17d053b9b7e.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sounds/Sfx/Koridor/APAR - Metal Hit.mp3"
+dest_files=[ "res://.import/APAR - Metal Hit.mp3-e2cf7a1cfd3c405d05ecb17d053b9b7e.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
