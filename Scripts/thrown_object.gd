@@ -70,7 +70,9 @@ func play_vfx(enemy, anim_name: String = ""):
 	if anim_name != "":
 		enemy.get_node("AnimationPlayer").play(anim_name)
 		yield(enemy.get_node("AnimationPlayer"), "animation_finished")
+		GameplaySfx.playing = true
 		queue_free()
 	else:
 		queue_free()
-		
+
+

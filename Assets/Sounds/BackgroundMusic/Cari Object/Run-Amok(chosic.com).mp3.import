@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Run-Amok(chosic.com).mp3-60699241f65fee7c1f150c93380dd117.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sounds/BackgroundMusic/Cari Object/Run-Amok(chosic.com).mp3"
+dest_files=[ "res://.import/Run-Amok(chosic.com).mp3-60699241f65fee7c1f150c93380dd117.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -13,7 +13,7 @@ func _physics_process(delta):
 		if area.is_in_group("pickup_obj"):
 			if !player.is_has_throw_obj and Input.is_action_just_pressed("interact"):
 #				print("happen")
-				player.set_throw_obj(area.texture, area.anger_damage, area.dialogue_if_hit_enemy, area.vfx_name)
+				player.set_throw_obj(area.texture, area.anger_damage, area.dialogue_if_hit_enemy, area.vfx_name, area.sfx_if_hit_enemy)
 				player.get_node("Throw/HSlider").set_calc_diff(area.diff_percentage)
 				GameEvents.emit_signal("dialog_initiated", area.pickup_dialogue)
 				area.get_node("SFXPickup").playing = true

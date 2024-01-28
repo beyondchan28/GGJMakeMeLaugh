@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Piala - Victory.ogg-a00fa71fe6c824fbfbe6c436cb8dc7cc
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

@@ -532,5 +532,5 @@ anims/sheep = SubResource( 33 )
 position = Vector2( 22, -20 )
 frames = SubResource( 17 )
 animation = "idle"
-frame = 3
+frame = 2
 playing = true
