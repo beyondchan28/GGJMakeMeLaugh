@@ -1,72 +1,65 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scripts/main_menu.gd" type="Script" id=1]
+[ext_resource path="res://Assets/MainMenuUI/titlescreen.png" type="Texture" id=2]
+[ext_resource path="res://Assets/MainMenuUI/button_howtoplay_on.png" type="Texture" id=3]
+[ext_resource path="res://Assets/MainMenuUI/button_play_on.png" type="Texture" id=4]
+[ext_resource path="res://Assets/MainMenuUI/button_exit_on.png" type="Texture" id=5]
+[ext_resource path="res://Assets/MainMenuUI/button_credits_on.png" type="Texture" id=6]
+[ext_resource path="res://Assets/MainMenuUI/howtoplay.png" type="Texture" id=7]
 
 [node name="MainMenu" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
 
-[node name="Background" type="ColorRect" parent="."]
+[node name="Background" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0.372549, 0.372549, 0.372549, 1 )
+texture = ExtResource( 2 )
+expand = true
 
-[node name="Title" type="Label" parent="Background"]
+[node name="ButtonContainer" type="Control" parent="."]
 anchor_left = 0.5
+anchor_top = 1.0
 anchor_right = 0.5
-margin_left = -40.0
-margin_top = 175.0
-margin_right = 38.0
-margin_bottom = 189.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Bully Buster"
-align = 1
-valign = 1
-
-[node name="ColorRect" type="ColorRect" parent="Background/Title"]
-show_behind_parent = true
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -107.5
-margin_top = -20.0
-margin_right = 107.5
-margin_bottom = 20.0
-
-[node name="ButtonContainer" type="VBoxContainer" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
+anchor_bottom = 1.0
 margin_left = -51.5
-margin_top = -46.0
+margin_top = -92.0
 margin_right = 51.5
-margin_bottom = 46.0
 
-[node name="PlayButton" type="Button" parent="ButtonContainer"]
-margin_right = 103.0
-margin_bottom = 20.0
-text = "PLAY"
+[node name="PlayButton" type="TextureButton" parent="ButtonContainer"]
+margin_left = -54.5
+margin_top = -85.0
+margin_right = 129.5
+margin_bottom = -45.0
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 4 )
+stretch_mode = 2
 
-[node name="HowToPlayButton" type="Button" parent="ButtonContainer"]
-margin_top = 24.0
-margin_right = 103.0
-margin_bottom = 44.0
-text = "HOW TO PLAY"
+[node name="HowToPlayButton" type="TextureButton" parent="ButtonContainer"]
+margin_left = 126.5
+margin_top = -49.0
+margin_right = 387.5
+margin_bottom = 7.0
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 3 )
 
-[node name="CreditButton" type="Button" parent="ButtonContainer"]
-margin_top = 48.0
-margin_right = 103.0
-margin_bottom = 68.0
-text = "CREDIT"
+[node name="CreditButton" type="TextureButton" parent="ButtonContainer"]
+margin_left = -283.5
+margin_top = -25.0
+margin_right = -39.5
+margin_bottom = 31.0
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 6 )
 
-[node name="ExitButton" type="Button" parent="ButtonContainer"]
-margin_top = 72.0
-margin_right = 103.0
-margin_bottom = 92.0
-text = "EXIT"
+[node name="ExitButton" type="TextureButton" parent="ButtonContainer"]
+margin_left = -21.5
+margin_top = 13.0
+margin_right = 146.5
+margin_bottom = 57.0
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 5 )
 
 [node name="CreditPopup" type="Popup" parent="."]
 anchor_left = 0.5
@@ -183,7 +176,7 @@ margin_top = -250.0
 margin_right = 250.0
 margin_bottom = 250.0
 
-[node name="CreditBackground" type="ColorRect" parent="HowToPlayPopup"]
+[node name="CreditBackground" type="TextureRect" parent="HowToPlayPopup"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -192,41 +185,13 @@ margin_left = -250.0
 margin_top = -250.0
 margin_right = 250.0
 margin_bottom = 250.0
-color = Color( 0.654902, 0.647059, 0.647059, 1 )
-
-[node name="Title" type="Label" parent="HowToPlayPopup/CreditBackground"]
-anchor_left = 0.5
-anchor_right = 0.5
-margin_left = -40.0
-margin_top = 112.0
-margin_right = 37.0
-margin_bottom = 126.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "How To Play"
-align = 1
-valign = 1
-
-[node name="Howto" type="Label" parent="HowToPlayPopup/CreditBackground"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -151.5
-margin_top = -7.0
-margin_right = 151.5
-margin_bottom = 7.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Tell about inputs and briefs description about it"
-align = 1
-valign = 1
+texture = ExtResource( 7 )
+expand = true
 
 [node name="CloseButton" type="Button" parent="HowToPlayPopup"]
 anchor_left = 1.0
-anchor_top = 1.0
 anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -123.0
-margin_top = -57.0
-margin_right = -20.0
-margin_bottom = -19.0
+margin_left = -103.0
+margin_bottom = 38.0
+rect_scale = Vector2( 1.01375, 1 )
 text = "Close"

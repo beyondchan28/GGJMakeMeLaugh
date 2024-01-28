@@ -343,7 +343,7 @@ editor_draw_drag_margin = true
 position = Vector2( 0, -106 )
 frames = SubResource( 10 )
 animation = "walk"
-frame = 3
+frame = 4
 playing = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]

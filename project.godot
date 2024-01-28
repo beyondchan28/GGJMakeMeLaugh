@@ -41,6 +41,7 @@ config/icon="res://icon.png"
 GameEvents="*res://Scripts/game_events.gd"
 SceneManager="*res://addons/scene_manager/SceneManager.tscn"
 BackgroundSound="*res://Scenes/BackgroundSound.tscn"
+GameplaySfx="*res://Scenes/GameplaySFX.tscn"
 
 [display]
 
